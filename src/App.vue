@@ -1,7 +1,7 @@
 <template>
   <div id="app">
       <el-container>
-    <el-header>header</el-header>
+    <Header></Header>
     <el-main>
       <div class="main">
         <router-view></router-view>
@@ -17,9 +17,13 @@
 </template>
 
 <script>
+import Header from '@/components/Header'
 
 export default {
   name: 'App',
+  components: {
+    Header
+  },
   methods:{
 
   }
@@ -30,4 +34,14 @@ export default {
 <style lang="stylus">
 body 
   background : #fae8c8
+  font-size: 12px
+
+.main
+  width 990px
+  margin 0 auto
+
+.footer
+  text-align center
+  height 42px
+  line-height 42px
 </style>

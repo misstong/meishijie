@@ -21,6 +21,12 @@ const router = new VueRouter({
             title:'详情',
             component: Detail
         },
+        {
+            path: '/recipe',
+            name: 'recipe',
+            title: "菜谱大全",
+            component: () => import('@/views/recipe.vue')
+        }
     ]
 })
 
