@@ -1,7 +1,7 @@
 <template>
     <div class="waterfall" ref="waterfall">
         <slot></slot>
-        <div>
+        <div style="text-align: center">
             <i class="el-icon-loading"></i>
         </div>
     </div>
