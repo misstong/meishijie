@@ -9,9 +9,9 @@
                     <el-col :span="10" :offset="2"></el-col>
                     <el-col :span="6" :offset="3" class="avatar-box" v-show="isLogin">
                         <router-link :to="{name: 'space'}">
-                            <el-avatar></el-avatar>
+                            <el-avatar style="vertical-align: middle;" shape="square" :src="userInfo.avatar"></el-avatar>
                         </router-link>
-                        <router-link :to="{name: 'sapce'}" class="user-name">TTT</router-link>
+                        <router-link :to="{name: 'sapce'}" class="user-name">{{userInfo.name}}</router-link>
                         <router-link :to="{name: 'create'}" class="collection">发布菜谱</router-link>
                         <a href="javascript:;" class="collection" @click="loginOut">退出</a>
                     </el-col>
@@ -47,6 +47,13 @@
     height  60px
     background #fff;
     box-shadow 10px 0px 10px rgba(0,0,0,0.3)
+
+.user-name, .collection
+    margin-left 5px
+    color #fff
+
+
+
 </style>
 <script>
 import Menus from '@/components/menus'
@@ -55,6 +62,9 @@ export default {
     computed: {
         isLogin() {
             return this.$store.getters.isLogin
+        },
+        userInfo(){
+            return this.$store.state.userInfo
         }
     },
     components: {
